@@ -7,22 +7,22 @@ public class server
 {
 	public static void main(String [] args) throws IOException
 	{
-		int rcv_port = 4444;
+		int rcv_port = Integer.parseInt(args[0]);
 
 		while(true)
 		{
-			try
-			{
+		try
+		{
 			//server datagram socket and packet 
-			DatagramSocket server = new DatagramSocket(rcv_port);
+			DatagramSocket server=new DatagramSocket(rcv_port);
 			DatagramPacket packet = null;
 			
-				//input and output streams
-			byte[] buffer = new byte[256];
-			String outMessage = null;
-			String inMessage = null;
+			//input and output streams
+			byte[] buffer=new byte[256];
+			String outMessage=null;
+			String inMessage=null;
 
-	//	    while (!inMessage.equals("exit")){
+	//		while (!inMessage.equals("exit")){
 
 			//receiving message	
 			packet=new DatagramPacket(buffer, buffer.length);
@@ -39,7 +39,7 @@ public class server
 			buffer = outMessage.getBytes();
 			packet = new DatagramPacket(buffer, buffer.length, address, rep_port);
 			server.send(packet);
-	//	    }
+	//		}
 
 			//closing socket
 			server.close();
@@ -49,8 +49,8 @@ public class server
 			{
 			System.out.println("Socket timed out!");
 			break;
-		}
-		catch(IOException e)
+
+		} catch(IOException e)
 			{
 			e.printStackTrace();
 			break;
