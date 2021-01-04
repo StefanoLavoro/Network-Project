@@ -10,6 +10,7 @@ public class client
 //		String serverName = args[0];
 		InetAddress serverName = InetAddress.getByName("localhost");
 		int port = 4444;
+		System.out.println(serverName + ":" + port + "\n");
 
 		//console stream
 		BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
@@ -25,23 +26,23 @@ public class client
 			String outMessage="";
 			String inMessage="";
 
-		//	while(!inMessage.equals("exit")){
-			//entering the message to send
-			System.out.println("Please type message to send : ");
-			outMessage = stdIn.readLine();
+			while(!inMessage.equals("exit")){
+				//entering the message to send
+				System.out.print("Please type message to send : ");
+				outMessage = stdIn.readLine();
 
-			//sending message
-			buffer = outMessage.getBytes();
-			packet=new DatagramPacket(buffer, buffer.length, serverName, port);
-			client.send(packet);
+				//sending message
+				buffer = outMessage.getBytes();
+				packet = new DatagramPacket(buffer, buffer.length, serverName, port);
+				client.send(packet);
 
-			//receiving message
-			packet = new DatagramPacket(buffer, buffer.length);
-			client.receive(packet);
+				//receiving message
+				packet = new DatagramPacket(buffer, buffer.length);
+				client.receive(packet);
 
-			inMessage = new String(packet.getData(), 0, packet.getLength());
-				System.out.println("[Received message] -> "+inMessage);
-		//	}
+				inMessage = new String(packet.getData(), 0, packet.getLength());
+					System.out.println("[Received message] -> "+inMessage);
+			}
 
 			//closing socket
 			client.close();
