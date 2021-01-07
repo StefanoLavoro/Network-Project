@@ -7,7 +7,6 @@ public class GroupChat {
 	
 	static DateFormat fordate = new SimpleDateFormat("dd/MM/yy"); // Added timestamp
 	static DateFormat fortime = new SimpleDateFormat("hh:mm:ss"); // Added timestamp
-	private static final String TERMINATE = "Exit";	// Redundant Fabio code
 	private static final String PREFIX = "/"; // Added prefix for commands
 	static String name;
 	static volatile boolean finished = false;
@@ -77,7 +76,7 @@ public class GroupChat {
 						}
 					}
 
-					if (listenMode == false) {
+					else if (listenMode == false) {
 						//					message = name + ": " + message;
 						message = String.format("[%s] %s: %s", timestamp, name, message);	// Added timestamp
 						byte[] buffer = message.getBytes();
