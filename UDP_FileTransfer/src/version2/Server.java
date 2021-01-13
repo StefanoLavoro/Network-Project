@@ -3,7 +3,6 @@ package version2;
 import java.io.*;
 import java.net.*;
 
-
 public class Server {
 	
 	public static DataOutputStream dataOutputStream = null;
@@ -29,12 +28,10 @@ public class Server {
 			dataInputStream = new DataInputStream(cs.getInputStream());
 			dataOutputStream = new DataOutputStream(cs.getOutputStream());
 			
-//			receiveFile("E:\\s_copy.jpg");
-//			receiveFile("E:\\testdoc_copy.txt");
-//			receiveFile("E:\\lisbonuni_copy.png");
-//			receiveFile("E:\\testMP3_copy.mp3");
-//			receiveFile("E:\\testAOE3_copy.iso");
-			receiveFile("C:\\Users\\maste\\Downloads\\spiderman2019_copy.mp4");
+//			receiveFile("C:\\Users\\maste\\Documents\\20-Coding\\Java\\testdoc_copy.txt"); // 46 KB
+//			receiveFile("C:\\Users\\maste\\Documents\\20-Coding\\Java\\lisbonuni_copy.png"); // 475 KB
+//			receiveFile("C:\\Users\\maste\\Documents\\20-Coding\\Java\\testMP3_copy.mp3"); // 12.521 KB
+			receiveFile("C:\\Users\\maste\\Documents\\20-Coding\\Java\\bigfile_copy.mp4"); // 2.118.541 KB
 			
 			dataInputStream.close();
 			dataOutputStream.close();
