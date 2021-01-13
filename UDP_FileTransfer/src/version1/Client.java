@@ -12,10 +12,10 @@ public class Client {
 			dataInputStream = new DataInputStream(socket.getInputStream());
 			dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
-			sendFile("E:\\s.jpg"); 				// 1 KB
-			sendFile("E:\\testdoc.txt"); 		// 46 KB
-			sendFile("E:\\lisbonuni.png"); 		// 475 KB
-			sendFile("E:\\testMP3.mp3"); 		// 12521 KB
+			sendFile("C:\\Users\\maste\\Documents\\20-Coding\\Java\\testdoc.txt"); // 46 KB
+			sendFile("C:\\Users\\maste\\Documents\\20-Coding\\Java\\lisbonuni.png"); // 475 KB
+			sendFile("C:\\Users\\maste\\Documents\\20-Coding\\Java\\testMP3.mp3"); // 12.521 KB
+			sendFile("C:\\Users\\maste\\Documents\\20-Coding\\Java\\bigfile.mp4"); // 2.118.541 KB
 			
 //			dataInputStream.close();
 //			dataInputStream.close();
