@@ -1,7 +1,4 @@
-// Source:
-// https://medium.com/@HeptaDecane/file-transfer-via-java-sockets-e8d4f30703a5
-
-package tutorial1;
+package version1;
 
 import java.io.*;
 import java.net.*;
